@@ -2,7 +2,7 @@ export class App {
   configureRouter(config, router) {
     config.title = 'Ski rental';
     config.map([
-      { route: ['', 'rent'], name: 'rent', moduleId: 'rent', nav: true, title: 'Rent' },
+      { route: ['', 'ski-length-calculator'], name: 'ski-length-calculator', moduleId: 'ski-length-calculator', nav: true, title: 'Calculate length' },
     ]);
     this.router = router;
   }

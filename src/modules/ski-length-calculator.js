@@ -1,4 +1,4 @@
-export class Welcome {
+export class SkiLengthCalculator {
   _height = 0;
   _age = 0;
   _type = 0;

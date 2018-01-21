@@ -1,0 +1,4 @@
+[0116/231530.690:ERROR:file_io.cc(89)] ReadExactly: expected 616, observed 0
+[0116/231530.691:ERROR:crash_report_database_win.cc(444)] failed to read records
+[0116/232015.869:ERROR:file_io.cc(89)] ReadExactly: expected 616, observed 0
+[0116/232015.869:ERROR:crash_report_database_win.cc(444)] failed to read records

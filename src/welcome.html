@@ -1,0 +1,18 @@
+<template>
+  <section>
+    <form role="form" submit.delegate="submit()">
+      <div class="form-group">
+        <label for="fn">Heigth</label>
+        <input type="text" value.bind="heigth" class="form-control" id="fn" placeholder="ex. 180">
+      </div>
+      <div class="form-group">
+        <label for="ln">Age</label>
+        <input type="text" value.bind="age" class="form-control" id="ln" placeholder="ex 25">
+      </div>
+      <div class="form-group">
+        <label>Type</label>
+      </div>
+      <button type="submit" class="btn btn-default">Calculate</button>
+    </form>
+  </section>
+</template>

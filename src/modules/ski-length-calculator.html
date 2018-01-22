@@ -29,6 +29,8 @@
 
       <div style="margin-top: 20px; color:white;">
         <Label if.bind="isValid">Length: ${skiLength}</Label>
+        <br>
+        <Label if.bind="minCompLength != 0 && isValid">Minimum competition length: ${minCompLength}</Label>
         <div repeat.for="item of validationErrors" if.bind="!isValid">
             <div>${item}</div>
         </div>

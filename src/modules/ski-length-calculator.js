@@ -37,13 +37,13 @@ export class SkiLengthCalculator {
   calculate() {
     this._skiLengthCalculatorApi.getLength(this._height, this._age, this._selectedTypeId).then(x => {
       x.json().then(response => {
-
         if (response.Errors) {
           this.isValid = false;
           this.validationErrors = response.Errors;
         }
         else {
           this.isValid = true;
+          this.minCompLength = response.MinCompetitionLength;
           if (response.MinLength == response.MaxLength) {
             this.skiLength = response.MinLength + ' cm';
           }

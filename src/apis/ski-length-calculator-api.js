@@ -6,9 +6,10 @@ export class SkiLengthCalculatorApi {
 
     constructor(httpClient) {
         this._httpClient = httpClient;
+        this.route = "crosscountryskis/";
     }
 
-    getLength() {
-        return his._httpClient.fetch('');
+    getLength(height, age, type) {
+        return this._httpClient.fetch(`${this.route}calculatelength?height=${height}&age=${age}&type=${type}`)
     }
 }

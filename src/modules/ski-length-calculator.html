@@ -1,18 +1,40 @@
 <template>
   <section>
-    <form role="form" submit.delegate="submit()">
-      <div class="form-group">
-        <label for="fn">Heigth</label>
-        <input type="text" value.bind="heigth" class="form-control" id="fn" placeholder="ex. 180">
+
+    <div class="ski-length-calculator">
+      <form role="form">
+
+        <div class="form-group">
+          <label for="fn">Heigth</label>
+          <input type="number" value.bind="height" class="form-control" id="height">
+        </div>
+
+        <div class="form-group">
+          <label for="ln">Age</label>
+          <input type="number" value.bind="age" class="form-control" id="length">
+        </div>
+
+        <div class="form-group">
+          <label for="type">Select type:</label>
+          <select class="form-control" id="sel1" value.bind="selectedTypeId">
+            <option value="1">Classic</option>
+            <option value="2">Skate</option>
+          </select>
+        </div>
+
+        <div class="btn-centered">
+          <button class="btn btn-default" click.delegate="calculate()">Calculate</button>
+        </div>
+      </form>
+
+      <div style="margin-top: 20px; color:white;">
+        <Label if.bind="isValid">Length: ${skiLength}</Label>
+        <div repeat.for="item of validationErrors" if.bind="!isValid">
+            <div>${item}</div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="ln">Age</label>
-        <input type="text" value.bind="age" class="form-control" id="ln" placeholder="ex 25">
-      </div>
-      <div class="form-group">
-        <label>Type</label>
-      </div>
-      <button type="submit" class="btn btn-default">Calculate</button>
-    </form>
+    </div>
+
+
   </section>
 </template>

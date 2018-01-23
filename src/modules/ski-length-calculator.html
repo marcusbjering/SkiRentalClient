@@ -3,40 +3,33 @@
 
     <div class="ski-length-calculator">
       <form role="form">
-
         <div class="form-group">
-          <label for="fn">Heigth</label>
+          <label for="height">Heigth</label>
           <input type="number" value.bind="height" class="form-control" id="height">
         </div>
-
         <div class="form-group">
-          <label for="ln">Age</label>
+          <label for="age">Age</label>
           <input type="number" value.bind="age" class="form-control" id="length">
         </div>
-
         <div class="form-group">
           <label for="type">Select type:</label>
-          <select class="form-control" id="sel1" value.bind="selectedTypeId">
+          <select class="form-control" id="type" value.bind="selectedTypeId">
             <option value="1">Classic</option>
             <option value="2">Skate</option>
           </select>
         </div>
-
-        <div class="btn-centered">
+        <div>
           <button class="btn btn-default" click.delegate="calculate()">Calculate</button>
         </div>
       </form>
-
-      <div style="margin-top: 20px; color:white;">
+      <div class="information">
         <Label if.bind="isValid">Length: ${skiLength}</Label>
         <br>
         <Label if.bind="minCompLength != 0 && isValid">Minimum competition length: ${minCompLength}</Label>
         <div repeat.for="item of validationErrors" if.bind="!isValid">
-            <div>${item}</div>
+          <div>${item}</div>
         </div>
       </div>
     </div>
-
-
   </section>
 </template>

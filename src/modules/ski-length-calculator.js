@@ -35,23 +35,27 @@ export class SkiLengthCalculator {
   }
 
   calculate() {
-    this._skiLengthCalculatorApi.getLength(this._height, this._age, this._selectedTypeId).then(x => {
-      x.json().then(response => {
-        if (response.Errors) {
-          this.isValid = false;
-          this.validationErrors = response.Errors;
-        }
-        else {
-          this.isValid = true;
-          this.minCompLength = response.MinCompetitionLength;
-          if (response.MinLength == response.MaxLength) {
-            this.skiLength = response.MinLength + ' cm';
-          }
-          else {
-            this.skiLength = response.MinLength + ' - ' + response.MaxLength + ' cm';
-          }
-        }
+    this._skiLengthCalculatorApi.getLength(this._height, this._age, this._selectedTypeId)
+      .then(response => response.json())
+      .then(data => {
+        this.handleResponse(data);
       });
-    });
+  }
+
+  handleResponse(data) {
+    if (data.Errors) {
+      this.isValid = false;
+      this.validationErrors = data.Errors;
+    }
+    else {
+      this.isValid = true;
+      this.minCompLength = data.MinCompetitionLength;
+      if (data.MinLength == data.MaxLength) {
+        this.skiLength = data.MinLength + ' cm';
+      }
+      else {
+        this.skiLength = data.MinLength + ' - ' + data.MaxLength + ' cm';
+      }
+    }
   }
 }

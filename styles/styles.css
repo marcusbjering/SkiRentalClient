@@ -5,7 +5,7 @@ body {
 }
 
 .ski-length-calculator{
-  display: inline-block;
+    display: inline-block;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -19,8 +19,13 @@ body {
     color: #FFF;
 }
 
-.btn-centered{
-  text-align: center;
+.ski-length-calculator btn{
+    text-align: center;
+}
+
+.information{
+  margin-top: 20px;
+  color:white;
 }
 
 .splash {

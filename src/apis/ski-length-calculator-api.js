@@ -10,6 +10,6 @@ export class SkiLengthCalculatorApi {
     }
 
     getLength(height, age, type) {
-        return this._httpClient.fetch(`${this.route}calculatelength?height=${height}&age=${age}&type=${type}`)
+        return this._httpClient.fetch(`${this.route}calculatelength?height=${height}&age=${age}&type=${type}`);
     }
 }
